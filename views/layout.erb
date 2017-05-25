@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= @title %></title>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.4;
+        padding: 2em 3em;
+      }
+      code {
+        font-family: monospace;
+        font-weight: 400;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">      
+
+        <%= yield %>
+      
+      </div>
+    </div>
+
+  </body>
+</html>
