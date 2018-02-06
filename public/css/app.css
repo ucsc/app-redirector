@@ -1,0 +1,21 @@
+body {
+  background-color: #fbfbfb;
+  font-family: "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  padding: 2em 3em;
+  color: #363636;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+code {
+  color: #ff3d3d;
+  font-family: "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  background-color: #ffff8f;
+  padding: 0.25em;
+}
