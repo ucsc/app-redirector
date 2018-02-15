@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'staccato'
 
 module REDIRECTOR
   
@@ -11,12 +12,16 @@ module REDIRECTOR
       "stayconnected.ucsc.edu" => "https://alumni.ucsc.edu/stay-connected/",
       "urhelp.ucsc.edu" => "https://urishelp.atlassian.net/servicedesk/customer/portal/2"
     }
+    
+    tracker = Staccato.tracker(ENV['GOOGLE_ANALYTICS_ID'], nil, ssl: true)
 
     get '/' do
       url = request.env["SERVER_NAME"]
       if settings.redirects[url]
+        tracker.event(category: 'App', action: 'Redirect', label: url, value: 1)
         redirect settings.redirects[url]
       else
+        tracker.event(category: 'App', action: 'Not found', label: url, value: 0)
         @host_name = request.env["SERVER_NAME"]
         not_found
       end
