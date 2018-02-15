@@ -4,10 +4,16 @@ module REDIRECTOR
   
   class App < Sinatra::Base
   
+    set :reflections, {
+      "artslectures.ucsc.edu" => "https://events.ucsc.edu",
+      "calendar.ucsc.edu" => "https://events.ucsc.edu",      
+      "urhelp.ucsc.edu" => "https://urishelp.atlassian.net/servicedesk/customer/portal/2"
+    }
+
     get '/' do
       url = request.env["SERVER_NAME"]
-      if ENV[url]
-        redirect ENV[url]
+      if settings.reflections[url]
+        redirect settings.reflections[url]
       else
         not_found
       end
