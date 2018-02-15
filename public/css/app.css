@@ -19,3 +19,8 @@ code {
   background-color: #ffff8f;
   padding: 0.25em;
 }
+
+.found code {
+  color: #101010;
+  background-color: #a2daa6;
+}
