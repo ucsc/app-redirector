@@ -5,10 +5,10 @@ module REDIRECTOR
   class App < Sinatra::Base
   
     set :redirects, {
-      "community.ucsc.edu" => "https://connect.ucsc.edu",
-      "stayconnected.ucsc.edu" => "alumni.ucsc.edu/stay-connected/",
       "artslectures.ucsc.edu" => "https://events.ucsc.edu",
       "calendar.ucsc.edu" => "https://events.ucsc.edu",      
+      "community.ucsc.edu" => "https://connect.ucsc.edu",
+      "stayconnected.ucsc.edu" => "https://alumni.ucsc.edu/stay-connected/",
       "urhelp.ucsc.edu" => "https://urishelp.atlassian.net/servicedesk/customer/portal/2"
     }
 
