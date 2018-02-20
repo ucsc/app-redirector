@@ -25,7 +25,7 @@ This app acts as a simple relay from a CNAME to another URL without needing the 
  
 ## Checking to see if a CNAME is configured
 
-Go to [/test/<DOMAIN>][5] and replace `<DOMAIN>` with a CNAME to see if that CNAME is configured. **Note:** this does not check that DNS settings are correct. You can check DNS configuration by typing `dig <DOMAIN>` in a terminal window on your computer.
+Go to [/test/`<DOMAIN>`][5] and replace `<DOMAIN>` with a CNAME to see if that CNAME is configured. **Note:** this does not check that DNS settings are correct. You can check DNS configuration by typing `dig <DOMAIN>` in a terminal window on your computer.
 
 [1]: http://sinatrarb.com
 [2]: https://github.com/ucsc/ucsc-redirector/blob/master/app.rb#L8
