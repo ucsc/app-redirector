@@ -27,8 +27,13 @@ This app acts as a simple relay from a CNAME to another URL without needing the 
 
 Go to [/test/`<DOMAIN>`][5] and replace `<DOMAIN>` with a CNAME to see if that CNAME is configured. **Note:** this does not check that DNS settings are correct. You can check DNS configuration by typing `dig <DOMAIN>` in a terminal window on your computer.
 
+## Google Analytics
+
+This app uses the [staccato gem][6] to track redirects as `events` in Google Analytics.
+
 [1]: http://sinatrarb.com
 [2]: https://github.com/ucsc/ucsc-redirector/blob/master/app.rb#L8
 [3]: https://devcenter.heroku.com/articles/custom-domains
 [4]: https://its.ucsc.edu/network/hostnames/
 [5]: https://ucsc-redirector.herokuapp.com/test/
+[6]: https://rubygems.org/gems/staccato
