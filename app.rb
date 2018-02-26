@@ -9,6 +9,7 @@ module REDIRECTOR
       "artslectures.ucsc.edu" => "https://events.ucsc.edu",
       "calendar.ucsc.edu" => "https://events.ucsc.edu",      
       "community.ucsc.edu" => "https://connect.ucsc.edu",
+      "podcasts.ucsc.edu" => "https://soundcloud.com/ucsantacruz",
       "stayconnected.ucsc.edu" => "https://alumni.ucsc.edu/stay-connected/",
       "urhelp.ucsc.edu" => "https://urishelp.atlassian.net/servicedesk/customer/portal/2"
     }
