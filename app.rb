@@ -11,7 +11,7 @@ module REDIRECTOR
       "community.ucsc.edu" => "https://connect.ucsc.edu",
       "podcasts.ucsc.edu" => "https://soundcloud.com/ucsantacruz",
       "stayconnected.ucsc.edu" => "https://alumni.ucsc.edu/stay-connected/",
-      "urhelp.ucsc.edu" => "https://urishelp.atlassian.net/servicedesk/customer/portal/2"
+      "urhelp.ucsc.edu" => "https://urishelp.atlassian.net/servicedesk/customer/portals"
     }
     
     tracker = Staccato.tracker(ENV['GOOGLE_ANALYTICS_ID'], nil, ssl: true)
