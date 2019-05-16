@@ -19,11 +19,11 @@ module REDIRECTOR
     
     tracker = Staccato.tracker(ENV['GOOGLE_ANALYTICS_ID'], nil, ssl: true)
 
-    get '/' do
+    get '/*' do
       url = request.env["SERVER_NAME"]
       if settings.redirects[url]
         tracker.event(category: 'App', action: 'Redirect', label: url, value: 1)
-        redirect settings.redirects[url]
+        redirect settings.redirects[url] + request.env["PATH_INFO"]
       else
         tracker.event(category: 'App', action: 'Not found', label: url, value: 0)
         @host_name = request.env["SERVER_NAME"]
