@@ -14,7 +14,7 @@ module REDIRECTOR
       "urtoolkit.ucsc.edu" => "https://sites.google.com/a/ucsc.edu/ur-toolkit/home",
       "maps-gis.ucsc.edu" => "https://maps.ucsc.edu",
       "www.maps.ucsc.edu" => "https://maps.ucsc.edu",
-      "leadership.ucsc.edu" => "https://chancellorsearch.ucsc.edu",
+      "leadership.ucsc.edu" => "https://chancellor.ucsc.edu",
       "science.ucsc.edu" => "https://dev-ucsc-pbsci.pantheonsite.io"
     }
     
