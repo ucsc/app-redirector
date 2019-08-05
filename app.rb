@@ -11,7 +11,7 @@ module REDIRECTOR
       "podcasts.ucsc.edu" => "https://soundcloud.com/ucsantacruz",
       "stayconnected.ucsc.edu" => "https://alumni.ucsc.edu/stay-connected",
       "urhelp.ucsc.edu" => "https://urishelp.atlassian.net/servicedesk/customer/portals",
-      "urtoolkit.ucsc.edu" => "https://sites.google.com/ucsc.edu/urtoolkit-2/",
+      "urtoolkit.ucsc.edu" => "https://sites.google.com/ucsc.edu/urtoolkit-2/home",
       "maps-gis.ucsc.edu" => "https://maps.ucsc.edu",
       "www.maps.ucsc.edu" => "https://maps.ucsc.edu",
       "leadership.ucsc.edu" => "https://chancellor.ucsc.edu",
