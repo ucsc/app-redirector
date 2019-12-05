@@ -15,7 +15,8 @@ module REDIRECTOR
       "maps-gis.ucsc.edu" => "https://maps.ucsc.edu",
       "www.maps.ucsc.edu" => "https://maps.ucsc.edu",
       "leadership.ucsc.edu" => "https://chancellor.ucsc.edu",
-      "science.ucsc.edu" => "https://dev-ucsc-pbsci.pantheonsite.io"
+      "science.ucsc.edu" => "https://dev-ucsc-pbsci.pantheonsite.io",
+      "alumniweekend.ucsc.edu" => "https://specialevents.ucsc.edu/alumniweekend"
     }
     
     tracker = Staccato.tracker(ENV['GOOGLE_ANALYTICS_ID'], nil, ssl: true)
