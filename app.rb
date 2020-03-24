@@ -14,7 +14,8 @@ module REDIRECTOR
       "urtoolkit.ucsc.edu" => "https://sites.google.com/ucsc.edu/urtoolkit-2",
       "maps-gis.ucsc.edu" => "https://maps.ucsc.edu",
       "www.maps.ucsc.edu" => "https://maps.ucsc.edu",
-      "leadership.ucsc.edu" => "https://chancellor.ucsc.edu"
+      "leadership.ucsc.edu" => "https://chancellor.ucsc.edu",
+      "slugsupport.ucsc.edu" => "http://c-fund.us/rah"
     }
     
     tracker = Staccato.tracker(ENV['GOOGLE_ANALYTICS_ID'], nil, ssl: true)
