@@ -14,7 +14,7 @@ module REDIRECTOR
       "urtoolkit.ucsc.edu" => "https://sites.google.com/ucsc.edu/urtoolkit-2",
       "maps-gis.ucsc.edu" => "https://maps.ucsc.edu",
       "www.maps.ucsc.edu" => "https://maps.ucsc.edu",
-      "slugsupport.ucsc.edu" => "http://c-fund.us/rah",
+      "slugsupport.ucsc.edu" => "https://ucscslugsupport.communityfunded.net",
       "www.lrdp.ucsc.edu" => "https://lrdp.ucsc.edu"
     }
     
