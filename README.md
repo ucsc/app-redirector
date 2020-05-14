@@ -1,19 +1,21 @@
 # Redirector
 
-Sinatra app to redirect CNAMEs to sub-pages on other sites.
+A Sinatra app to redirect CNAMEs to other sites and internal pages.
 
 ## Why does this app exist?
 
-Occasionally, CNAMEs on the UC Santa Cruz domain (*.ucsc.edu) are created as _redirects to sub-pages_ rather than _stand-alone websites_. Configuring a CNAME to act as a redirect required a complicated configuration that consisted of pointing the CNAME at a campus web server, configuring Apache to use the CNAME as an alias for another site, then using an `.htaccess` file in that site to redirect any request for `HOST_NAME` to another URL.
+Occasionally, CNAMEs on the UC Santa Cruz domain (ucsc.edu) are created as _redirects to sub-pages_ rather than _stand-alone websites_. Configuring a CNAME to act as a redirect required a complicated configuration that consisted of pointing the CNAME at a campus web server, configuring Apache to use the CNAME as an alias for another site, then using an `.htaccess` file in that site to redirect any request for `HOST_NAME` to another URL.
 
-This app acts as a simple relay from a CNAME to another URL without needing the Apache middle layer.
+This app acts as a simple relay from a CNAME to another URL without needing the Apache middle layer. Additionally, we can track the traffic to these domains by sending 'redirect' events to Google Analytics each time a visitor is redirected through this app.
+
+We also use this app to retire CNAMEs on the UC Santa Cruz domain (ucsc.edu) by pointing them to a different site.
 
 ## How does this app work?
 
 1. This app is written in Ruby, using [Sinatra][1]. It runs on a Heroku Hobby Dyno.
 2. It uses a [hash stored in the settings block][2] of `app.rb` to store CNAMEs and corresponding redirect URLs.
 3. When a request comes in, the request's `SERVER_NAME` value is used to check the hash for a corresponding key.
-4. If there is a key for `SERVER_NAME`, the app will redirect the request to the URL for that key. If there is no key, the app will show a 404 screen and let the user know there is no redirect configured for the requested `SERVER_NAME`.
+4. If there is a key for `SERVER_NAME`, the app will redirect the request to the value for that key, a URL. If there is no key, the app will show a 404 screen and let the user know there is no redirect configured for the requested `SERVER_NAME`.
 
 ## Adding a new redirect to this app
 
@@ -21,7 +23,7 @@ This app acts as a simple relay from a CNAME to another URL without needing the 
 2. In Heroku, [add the domain to the project][3].
 3. [Request a new DNS record][4] for the CNAME by submitting a help ticket. The record should be a CNAME record. The target should follow this pattern: `<SUBDOMAIN>.ucsc.edu.herokudns.com`. Replace `<SUBDOMAIN>` with the CNAME you wish to configure.
 4. Once the DNS record takes effect, visit your CNAME and you will be redirected to the URL you specificed in the settings hash.
-5. HTTPS is configured by default on all Heroku custom domains. So your redirect will work over HTTP or HTTPS requests.
+5. HTTPS is configured by default on all Heroku custom domains. So the redirect will work over HTTP or HTTPS requests.
  
 ## Checking to see if a CNAME is configured
 
