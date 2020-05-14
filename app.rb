@@ -21,19 +21,7 @@ module REDIRECTOR
     
     tracker = Staccato.tracker(ENV['GOOGLE_ANALYTICS_ID'], nil, ssl: true)
 
-    get '/*' do
-      url = request.env["SERVER_NAME"]
-      if settings.redirects[url]
-        tracker.event(category: 'App', action: 'Redirect', label: url, value: 1)
-        redirect settings.redirects[url] + request.env["PATH_INFO"]
-      else
-        tracker.event(category: 'App', action: 'Not found', label: url, value: 0)
-        @host_name = request.env["SERVER_NAME"]
-        not_found
-      end
-    end
-
-    get '/test/:cname' do |domain|
+    get '/debug/:cname', :host_name => /^ucsc-redirector\./ do |domain|
       if settings.redirects[domain]
         @title = "Redirect exists for this domain"
         @host_name = domain
@@ -44,6 +32,18 @@ module REDIRECTOR
         @host_name = domain
         not_found
       end            
+    end
+
+    get '/*' do
+      url = request.env["SERVER_NAME"]
+      if settings.redirects[url]
+        tracker.event(category: 'App', action: 'Redirect', label: url, value: 1)
+        redirect settings.redirects[url] + request.env["PATH_INFO"]
+      else
+        tracker.event(category: 'App', action: 'Not found', label: url, value: 0)
+        @host_name = request.env["SERVER_NAME"]
+        not_found
+      end
     end
 
     not_found do
