@@ -16,7 +16,10 @@ module REDIRECTOR
       "www.maps.ucsc.edu" => "https://maps.ucsc.edu",
       "slugsupport.ucsc.edu" => "https://ucscslugsupport.communityfunded.net",
       "www.lrdp.ucsc.edu" => "https://lrdp.ucsc.edu",
-      "santacruzinstitute.ucsc.edu" => "https://transform.ucsc.edu"
+      "santacruzinstitute.ucsc.edu" => "https://transform.ucsc.edu",
+      "safe.ucsc.edu" => "https://titleix.ucsc.edu",
+      "m.ucsc.edu" => "https://www.ucsc.edu",
+      "mobile.ucsc.edu" => "https://www.ucsc.edu"
     }
     
     tracker = Staccato.tracker(ENV['GOOGLE_ANALYTICS_ID'], nil, ssl: true)
